@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace Memory_Game
@@ -20,29 +22,47 @@ namespace Memory_Game
         //Documentation requirements
         private const int TotalCards = 32;
         private const int TotalPairs = 16;
-        private List<Button> cardButtons = new List<Button>(); 
+        private List<Button> cardButtons = new List<Button>();
         private List<string> cardValues = new List<string>();
         private Form launcherForm;
         public BaseGame(Form launcher)
         {
             InitializeComponent();
-            
- 
+            launcherForm = launcher;
+            SetupBaseGame();
+        }
+        private void SetupBaseGame()
+        {
+            //Fullwindow mode
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            this.TopMost = true;
+            this.btnBack.Click += BtnBack_Click;
+            this.btnExit.Click += BtnExit_Click;
+            this.btnStart.Click += Btn_Start_Click;
+            // When BaseGame closing, Launcher opens (Lambda)
+            this.FormClosed += (s, e) => launcherForm.Show();
+
+            CreateCardButtons();
 
 
         }
+
+
+
+
         private void CreateCardButtons()
         {
             for (int i = 0; i < TotalCards; i++)
             {
                 Button card = new Button();
-                card.Size = new Size(115, 115);
+                card.Size = new Size(80, 80);
                 card.Font = new Font("Windings", 48, FontStyle.Bold);
                 card.ForeColor = Color.White;
                 card.BackColor = Color.DarkRed;
                 card.Text = string.Empty;
                 card.Enabled = false;
-                
+                card.Click += Card_Click;
                 cardButtons.Add(card);
                 this.gamePanel.Controls.Add(card);
             }
@@ -77,7 +97,7 @@ namespace Memory_Game
             for (int i = 0; i < cardValues.Count; i++)
             {
                 cardButtons[i].Enabled = true;
-                cardButtons[i].Text = string.Empty; 
+                cardButtons[i].Text = string.Empty;
                 cardButtons[i].BackColor = Color.DodgerBlue;
                 cardButtons[i].Tag = cardValues[i];
 
@@ -85,17 +105,19 @@ namespace Memory_Game
         }
 
 
-        private void  Card_Click(object sender, EventArgs e)
+        private async void Card_Click(object sender, EventArgs e)
         {
             Button clickedCard = sender as Button;
+            // Ignoring click, when 2 cards open or card already found
             if (secondCard != null || !clickedCard.Enabled || clickedCard == firstCard)
             {
                 return;
             }
+            //Showing face of the card
             clickedCard.Text = clickedCard.Tag.ToString();
             clickedCard.BackColor = Color.White;
             clickedCard.ForeColor = Color.Black;
-            if(firstCard == null)
+            if (firstCard == null)
             {
                 firstCard = clickedCard;
                 return;
@@ -103,7 +125,8 @@ namespace Memory_Game
             secondCard = clickedCard;
             turns++;
             this.lblTurnsCount.Text = turns.ToString();
-            if( firstCard.Tag.ToString() == secondCard.Tag.ToString() )
+            // Match found
+            if (firstCard.Tag.ToString() == secondCard.Tag.ToString())
             {
                 pairsFound++;
                 lblPairsCount.Text = pairsFound.ToString();
@@ -113,14 +136,35 @@ namespace Memory_Game
                 secondCard.BackColor = Color.LightBlue;
                 firstCard = null;
                 secondCard = null;
+                if (pairsFound == TotalPairs)
+                {
+                    this.lblStatus.Text = "Victory!";
+                }
             }
-            if(pairsFound == TotalPairs)
+            //showing back of the card
+            else
             {
-                this.lblStatus.Text = "Victory!";
+                await Task.Delay(500);
+                clickedCard.Text = string.Empty;
+                clickedCard.BackColor = Color.DarkGreen;
+                firstCard.Text = string.Empty;
+                firstCard.BackColor = Color.DarkGreen;
+                firstCard = null;
+                secondCard = null;
             }
         }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
- }
+}
  
 
 

@@ -42,88 +42,90 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(184, 82);
+            lblTitle.Location = new Point(492, 9);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(50, 20);
+            lblTitle.Size = new Size(110, 20);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "label1";
-           
+            lblTitle.Text = "MatchingGame";
             // 
             // lblGameType
             // 
             lblGameType.AutoSize = true;
-            lblGameType.Location = new Point(313, 82);
+            lblGameType.Location = new Point(548, 195);
             lblGameType.Name = "lblGameType";
-            lblGameType.Size = new Size(50, 20);
+            lblGameType.Size = new Size(79, 20);
             lblGameType.TabIndex = 1;
-            lblGameType.Text = "label2";
+            lblGameType.Text = "BaseGame";
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(102, 158);
+            btnExit.Location = new Point(803, 655);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(94, 29);
             btnExit.TabIndex = 2;
-            btnExit.Text = "button1";
+            btnExit.Text = "Beenden";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += BtnExit_Click;
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(263, 166);
+            btnBack.Location = new Point(309, 655);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 3;
-            btnBack.Text = "button2";
+            btnBack.Text = "Zurück";
             btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += BtnBack_Click;
             // 
             // btnStart
             // 
-            btnStart.Location = new Point(434, 191);
+            btnStart.Location = new Point(533, 655);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(94, 29);
             btnStart.TabIndex = 4;
-            btnStart.Text = "button3";
+            btnStart.Text = "Start";
             btnStart.UseVisualStyleBackColor = true;
+            btnStart.Click += Btn_Start_Click;
             // 
             // gamePanel
             // 
-            gamePanel.Location = new Point(228, 286);
+            gamePanel.Location = new Point(230, 242);
             gamePanel.Name = "gamePanel";
-            gamePanel.Size = new Size(250, 125);
+            gamePanel.Size = new Size(753, 407);
             gamePanel.TabIndex = 5;
             // 
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(492, 70);
+            lblStatus.Location = new Point(70, 242);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(50, 20);
+            lblStatus.Size = new Size(49, 20);
             lblStatus.TabIndex = 6;
-            lblStatus.Text = "label1";
+            lblStatus.Text = "Status";
             // 
             // lblTurnsCount
             // 
             lblTurnsCount.AutoSize = true;
-            lblTurnsCount.Location = new Point(509, 117);
+            lblTurnsCount.Location = new Point(887, 70);
             lblTurnsCount.Name = "lblTurnsCount";
-            lblTurnsCount.Size = new Size(50, 20);
+            lblTurnsCount.Size = new Size(78, 20);
             lblTurnsCount.TabIndex = 7;
-            lblTurnsCount.Text = "label2";
+            lblTurnsCount.Text = "Zuganzahl";
             // 
             // lblPairsCount
             // 
             lblPairsCount.AutoSize = true;
-            lblPairsCount.Location = new Point(620, 93);
+            lblPairsCount.Location = new Point(887, 140);
             lblPairsCount.Name = "lblPairsCount";
-            lblPairsCount.Size = new Size(50, 20);
+            lblPairsCount.Size = new Size(80, 20);
             lblPairsCount.TabIndex = 8;
-            lblPairsCount.Text = "label3";
+            lblPairsCount.Text = "Paaranzahl";
             // 
             // BaseGame
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1191, 711);
             Controls.Add(lblPairsCount);
             Controls.Add(lblTurnsCount);
             Controls.Add(lblStatus);

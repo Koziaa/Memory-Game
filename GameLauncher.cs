@@ -32,6 +32,11 @@ namespace Memory_Game
 
         }
 
+        
+        
+
+       
+
         private void BtnBaseGame_Click(object sender, EventArgs e)
         {
             BaseGame gameForm = new BaseGame(this);
