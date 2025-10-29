@@ -84,6 +84,7 @@
             btnScalableGame.TabIndex = 4;
             btnScalableGame.Text = "ScalableCardsGame";
             btnScalableGame.UseVisualStyleBackColor = true;
+            btnScalableGame.Click += BtnScalableCardsGame_Click;
             // 
             // btnMultiModalGame
             // 

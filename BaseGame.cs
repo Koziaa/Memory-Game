@@ -37,6 +37,7 @@ namespace Memory_Game
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             this.TopMost = true;
+
             this.btnBack.Click += BtnBack_Click;
             this.btnExit.Click += BtnExit_Click;
             this.btnStart.Click += Btn_Start_Click;

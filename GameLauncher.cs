@@ -26,16 +26,16 @@ namespace Memory_Game
             this.btnBaseGame.Enabled = true;
             this.btnGameDetails.Enabled = false;
             this.btnMultiModalGame.Enabled = false;
-            this.btnScalableGame.Enabled = false;
+            this.btnScalableGame.Enabled = true;
             this.btnGameStatistics.Enabled = false;
 
 
         }
 
-        
-        
 
-       
+
+
+
 
         private void BtnBaseGame_Click(object sender, EventArgs e)
         {
@@ -47,6 +47,16 @@ namespace Memory_Game
         private void BtnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        
+        
+
+        private void BtnScalableCardsGame_Click(object sender, EventArgs e)
+        {
+            ScalableCardGames gameForm = new ScalableCardGames(this);
+            gameForm.Show();
+            this.Hide();
         }
     }
 }

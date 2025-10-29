@@ -30,7 +30,7 @@
         {
             btnSave = new Button();
             btnCancel = new Button();
-            textBox1 = new TextBox();
+            txtPlayerName = new TextBox();
             lblName = new Label();
             lblStats = new Label();
             lblInfo = new Label();
@@ -44,6 +44,7 @@
             btnSave.TabIndex = 0;
             btnSave.Text = "Speichern";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += BtnSave_Click;
             // 
             // btnCancel
             // 
@@ -53,13 +54,14 @@
             btnCancel.TabIndex = 1;
             btnCancel.Text = "Abbrechnen";
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += BtnCancel_Click;
             // 
-            // textBox1
+            // txtPlayerName
             // 
-            textBox1.Location = new Point(135, 70);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 2;
+            txtPlayerName.Location = new Point(135, 70);
+            txtPlayerName.Name = "txtPlayerName";
+            txtPlayerName.Size = new Size(125, 27);
+            txtPlayerName.TabIndex = 2;
             // 
             // lblName
             // 
@@ -96,7 +98,7 @@
             Controls.Add(lblInfo);
             Controls.Add(lblStats);
             Controls.Add(lblName);
-            Controls.Add(textBox1);
+            Controls.Add(txtPlayerName);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Name = "StatisticsSaveDialog";
@@ -110,7 +112,7 @@
 
         private Button btnSave;
         private Button btnCancel;
-        private TextBox textBox1;
+        private TextBox txtPlayerName;
         private Label lblName;
         private Label lblStats;
         private Label lblInfo;
