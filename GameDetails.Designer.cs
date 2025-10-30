@@ -84,10 +84,10 @@
             // 
             // lblDetails
             // 
-            lblDetails.AutoSize = true;
-            lblDetails.Location = new Point(482, 121);
+            lblDetails.BorderStyle = BorderStyle.FixedSingle;
+            lblDetails.Location = new Point(330, 63);
             lblDetails.Name = "lblDetails";
-            lblDetails.Size = new Size(44, 20);
+            lblDetails.Size = new Size(439, 336);
             lblDetails.TabIndex = 5;
             lblDetails.Text = "Titles";
             // 
