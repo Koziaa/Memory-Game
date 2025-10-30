@@ -37,6 +37,8 @@
             lblStatus = new Label();
             lblTurnsCount = new Label();
             lblPairsCount = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // lblTitle
@@ -121,11 +123,22 @@
             lblPairsCount.TabIndex = 8;
             lblPairsCount.Text = "Paaranzahl";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.logo;
+            pictureBox1.Location = new Point(492, 47);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
             // BaseGame
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1191, 711);
+            Controls.Add(pictureBox1);
             Controls.Add(lblPairsCount);
             Controls.Add(lblTurnsCount);
             Controls.Add(lblStatus);
@@ -137,6 +150,7 @@
             Controls.Add(lblTitle);
             Name = "BaseGame";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -152,5 +166,6 @@
         private Label lblStatus;
         private Label lblTurnsCount;
         private Label lblPairsCount;
+        private PictureBox pictureBox1;
     }
 }

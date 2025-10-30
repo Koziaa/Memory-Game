@@ -44,7 +44,7 @@
             // 
             // btnStart
             // 
-            btnStart.Location = new Point(0, 0);
+            btnStart.Location = new Point(1058, 185);
             btnStart.Name = "btnStart";
             btnStart.Size = new Size(94, 29);
             btnStart.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             // btnReset
             // 
-            btnReset.Location = new Point(99, 43);
+            btnReset.Location = new Point(1246, 185);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(94, 29);
             btnReset.TabIndex = 1;
@@ -65,7 +65,7 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(277, 21);
+            lblTitle.Location = new Point(1190, 12);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(110, 20);
             lblTitle.TabIndex = 2;
@@ -74,7 +74,7 @@
             // lblGameType
             // 
             lblGameType.AutoSize = true;
-            lblGameType.Location = new Point(388, 21);
+            lblGameType.Location = new Point(1159, 64);
             lblGameType.Name = "lblGameType";
             lblGameType.Size = new Size(141, 20);
             lblGameType.TabIndex = 3;
@@ -83,7 +83,7 @@
             // lblStatus
             // 
             lblStatus.AutoSize = true;
-            lblStatus.Location = new Point(357, 98);
+            lblStatus.Location = new Point(1149, 255);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(49, 20);
             lblStatus.TabIndex = 4;
@@ -92,7 +92,7 @@
             // lblPairsCount
             // 
             lblPairsCount.AutoSize = true;
-            lblPairsCount.Location = new Point(510, 67);
+            lblPairsCount.Location = new Point(1149, 351);
             lblPairsCount.Name = "lblPairsCount";
             lblPairsCount.Size = new Size(80, 20);
             lblPairsCount.TabIndex = 5;
@@ -101,7 +101,7 @@
             // lblTurnsCount
             // 
             lblTurnsCount.AutoSize = true;
-            lblTurnsCount.Location = new Point(429, 67);
+            lblTurnsCount.Location = new Point(1149, 303);
             lblTurnsCount.Name = "lblTurnsCount";
             lblTurnsCount.Size = new Size(78, 20);
             lblTurnsCount.TabIndex = 6;
@@ -110,7 +110,7 @@
             // lblTime
             // 
             lblTime.AutoSize = true;
-            lblTime.Location = new Point(483, 114);
+            lblTime.Location = new Point(1149, 400);
             lblTime.Name = "lblTime";
             lblTime.Size = new Size(35, 20);
             lblTime.TabIndex = 7;
@@ -118,15 +118,15 @@
             // 
             // gamePanel
             // 
-            gamePanel.Location = new Point(301, 261);
+            gamePanel.Location = new Point(22, 12);
             gamePanel.Name = "gamePanel";
-            gamePanel.Size = new Size(250, 125);
+            gamePanel.Size = new Size(1030, 769);
             gamePanel.TabIndex = 8;
             // 
             // cmbCardsCount
             // 
             cmbCardsCount.FormattingEnabled = true;
-            cmbCardsCount.Location = new Point(99, 207);
+            cmbCardsCount.Location = new Point(1149, 125);
             cmbCardsCount.Name = "cmbCardsCount";
             cmbCardsCount.Size = new Size(151, 28);
             cmbCardsCount.TabIndex = 0;
@@ -135,7 +135,7 @@
             // 
             // btnBack
             // 
-            btnBack.Location = new Point(174, 150);
+            btnBack.Location = new Point(1058, 528);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 9;
@@ -145,7 +145,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(55, 150);
+            btnExit.Location = new Point(1246, 537);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(94, 29);
             btnExit.TabIndex = 10;
@@ -157,7 +157,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1368, 779);
             Controls.Add(btnExit);
             Controls.Add(btnBack);
             Controls.Add(cmbCardsCount);

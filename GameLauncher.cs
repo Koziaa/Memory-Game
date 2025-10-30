@@ -11,6 +11,7 @@ namespace Memory_Game
         {
             this.btnExit.Click += BtnExit_Click;
             this.btnBaseGame.Click += BtnBaseGame_Click;
+            this.btnGameDetails.Click += BtnGameDetails_Click;
             // Design 
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Minimized;
@@ -24,7 +25,7 @@ namespace Memory_Game
             toolTipForButtons.SetToolTip(this.btnScalableGame, "Start ScalableCardsGame");
             //Status of Buttons
             this.btnBaseGame.Enabled = true;
-            this.btnGameDetails.Enabled = false;
+            this.btnGameDetails.Enabled = true;
             this.btnMultiModalGame.Enabled = false;
             this.btnScalableGame.Enabled = true;
             this.btnGameStatistics.Enabled = false;
@@ -49,13 +50,20 @@ namespace Memory_Game
             Application.Exit();
         }
 
-        
-        
+
+
 
         private void BtnScalableCardsGame_Click(object sender, EventArgs e)
         {
             ScalableCardGames gameForm = new ScalableCardGames(this);
             gameForm.Show();
+            this.Hide();
+        }
+
+        private void BtnGameDetails_Click(object sender, EventArgs e)
+        {
+            GameDetails detailsForm = new GameDetails(this);
+            detailsForm.Show();
             this.Hide();
         }
     }

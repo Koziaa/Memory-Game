@@ -43,7 +43,7 @@ namespace Memory_Game
             this.lblStats.Text = $"Cards: {cardCount} | Time: {gameTimeInSeconds} sec. | Date: {gameDate}";
 
 
-            this.lblName.Text = "Введите ваше имя:";
+            
 
             // Connecting buttons
             this.btnSave.Click += BtnSave_Click;

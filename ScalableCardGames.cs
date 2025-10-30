@@ -20,8 +20,9 @@ namespace Memory_Game
         private int totalPairs = 0;
         private int currentCardCount = 0;
         private int timeCount = 0;
+        private bool gameWon = false;
         private List<Button> cardButtons = new List<Button>();
-        private List<string> cardValues = new List<string>(); 
+        private List<string> cardValues = new List<string>();
         private string imagesFolderPath = Path.Combine(Application.StartupPath, "Images"); // Way to pictures
         private List<string> imagePaths = new List<string>();
         private Form launcherForm;
@@ -63,18 +64,18 @@ namespace Memory_Game
 
         private void SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(this.cmbCardsCount.SelectedIndex > 0)
+            if (this.cmbCardsCount.SelectedIndex > 0)
             {
                 //Enabling buttons according to documentation
                 btnStart.Enabled = true;
                 btnReset.Enabled = true;
 
                 string selection = this.cmbCardsCount.SelectedItem.ToString();
-                if(selection.StartsWith("40"))
+                if (selection.StartsWith("40"))
                 {
                     currentCardCount = 40;
                 }
-                else if(selection.StartsWith("48"))
+                else if (selection.StartsWith("48"))
                 {
                     currentCardCount = 48;
                 }
@@ -104,6 +105,7 @@ namespace Memory_Game
         private void BtnStart_Click(object sender, EventArgs e)
         {
             LoadImagePaths();
+            gameWon = false;
             turns = 0;
             pairsFound = 0;
             timeCount = 0;
@@ -135,7 +137,7 @@ namespace Memory_Game
             {
                 cardButtons[i].Enabled = true;
                 cardButtons[i].Text = string.Empty; //  face
-                cardButtons[i].BackColor = Color.DarkGray; 
+                cardButtons[i].BackColor = Color.DarkGray;
                 cardButtons[i].Tag = cardValues[i]; // putting path into tag
                 cardButtons[i].BackgroundImage = null; // showing face of the card
             }
@@ -144,14 +146,14 @@ namespace Memory_Game
 
         private void CreateCardButtons()
         {
-            int size = 90;
+            int size = 120;
             if (currentCardCount > 48)
             {
-                size = 80;
+                size = 100;
             }
             else if (currentCardCount > 56)
             {
-                size = 70;
+                size = 86;
             }
             for (int i = 0; i < currentCardCount; i++)
             {
@@ -171,7 +173,7 @@ namespace Memory_Game
 
         private void BtnBack_Click(object sender, EventArgs e)
         {
-            gameTimer.Stop(); 
+            gameTimer.Stop();
             this.Close();
         }
 
@@ -187,7 +189,7 @@ namespace Memory_Game
         }
         private void ResetGameUI(bool stopTimer)
         {
-            if(stopTimer) gameTimer.Stop();
+            if (stopTimer) gameTimer.Stop();
             gamePanel.Controls.Clear();
             this.cmbCardsCount.Enabled = true;
             this.cmbCardsCount.SelectedIndex = 0;
@@ -208,7 +210,7 @@ namespace Memory_Game
             Button clickedCard = sender as Button;
 
             // Ignoring unnessesery clicks
-            if (secondCard != null || !clickedCard.Enabled || clickedCard == firstCard)
+            if (gameWon ||secondCard != null || !clickedCard.Enabled || clickedCard == firstCard)
             {
                 return;
             }
@@ -242,17 +244,18 @@ namespace Memory_Game
                 // Looking for victory
                 if (pairsFound == totalPairs)
                 {
+                    gameWon = true;
                     gameTimer.Stop();
                     lblStatus.Text = "Status: Victory!";
 
-                    
+
                     ShowSaveDialog(); //
                 }
             }
             else
             {
                 // No match
-                await Task.Delay(1000); 
+                await Task.Delay(1000);
                 if (firstCard == null) return;
 
                 // Hiding face of the card
@@ -268,11 +271,11 @@ namespace Memory_Game
         private void ShowSaveDialog()
         {
 
-         
-             StatisticsSaveDialog saveDialog = new StatisticsSaveDialog(currentCardCount, timeCount);
-             saveDialog.ShowDialog();
 
-            
+            StatisticsSaveDialog saveDialog = new StatisticsSaveDialog(currentCardCount, timeCount);
+            saveDialog.ShowDialog();
+
+
 
         }
     }

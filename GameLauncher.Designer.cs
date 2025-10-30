@@ -42,7 +42,7 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Location = new Point(107, 130);
+            lblTitle.Location = new Point(640, 23);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(110, 20);
             lblTitle.TabIndex = 0;
@@ -50,15 +50,17 @@
             // 
             // picLogo
             // 
-            picLogo.Location = new Point(149, 23);
+            picLogo.Image = Properties.Resources.logo;
+            picLogo.Location = new Point(432, 12);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(125, 62);
+            picLogo.Size = new Size(202, 128);
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 1;
             picLogo.TabStop = false;
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(84, 198);
+            btnExit.Location = new Point(673, 381);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(94, 29);
             btnExit.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // btnBaseGame
             // 
-            btnBaseGame.Location = new Point(223, 197);
+            btnBaseGame.Location = new Point(59, 154);
             btnBaseGame.Name = "btnBaseGame";
             btnBaseGame.Size = new Size(94, 29);
             btnBaseGame.TabIndex = 3;
@@ -78,7 +80,7 @@
             // 
             // btnScalableGame
             // 
-            btnScalableGame.Location = new Point(59, 283);
+            btnScalableGame.Location = new Point(35, 246);
             btnScalableGame.Name = "btnScalableGame";
             btnScalableGame.Size = new Size(152, 29);
             btnScalableGame.TabIndex = 4;
@@ -88,7 +90,7 @@
             // 
             // btnMultiModalGame
             // 
-            btnMultiModalGame.Location = new Point(217, 270);
+            btnMultiModalGame.Location = new Point(35, 371);
             btnMultiModalGame.Name = "btnMultiModalGame";
             btnMultiModalGame.Size = new Size(137, 29);
             btnMultiModalGame.TabIndex = 5;
@@ -97,16 +99,17 @@
             // 
             // btnGameDetails
             // 
-            btnGameDetails.Location = new Point(360, 339);
+            btnGameDetails.Location = new Point(322, 246);
             btnGameDetails.Name = "btnGameDetails";
             btnGameDetails.Size = new Size(105, 29);
             btnGameDetails.TabIndex = 6;
             btnGameDetails.Text = "GameDetails";
             btnGameDetails.UseVisualStyleBackColor = true;
+            
             // 
             // btnGameStatistics
             // 
-            btnGameStatistics.Location = new Point(197, 339);
+            btnGameStatistics.Location = new Point(322, 371);
             btnGameStatistics.Name = "btnGameStatistics";
             btnGameStatistics.Size = new Size(120, 29);
             btnGameStatistics.TabIndex = 7;
@@ -126,8 +129,10 @@
             Controls.Add(btnExit);
             Controls.Add(picLogo);
             Controls.Add(lblTitle);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "GameLauncher";
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             ResumeLayout(false);
             PerformLayout();
