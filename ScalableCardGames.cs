@@ -153,7 +153,7 @@ namespace Memory_Game
             }
             else if (currentCardCount > 56)
             {
-                size = 86;
+                size = 75;
             }
             for (int i = 0; i < currentCardCount; i++)
             {

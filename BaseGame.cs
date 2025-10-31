@@ -41,7 +41,7 @@ namespace Memory_Game
             this.btnBack.Click += BtnBack_Click;
             this.btnExit.Click += BtnExit_Click;
             this.btnStart.Click += Btn_Start_Click;
-            // When BaseGame closing, Launcher opens (Lambda)
+            // When BaseGame closing, Launcher opens (Lambda) (s, e -> sender, events)
             this.FormClosed += (s, e) => launcherForm.Show();
 
             CreateCardButtons();

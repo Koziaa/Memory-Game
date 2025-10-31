@@ -72,7 +72,7 @@ namespace Memory_Game
                     this.lblDetails.Text = "BaseGame ist der klassische Modus.\n\n" +
                                            "Regeln:\n" +
                                            "- Kartenanzahl: 32 (16 Paare).\n" +
-                                           "- Kartentyp: Symbole (Schriftart 'Wingdings').\n" +
+                                           "- Kartentyp: Symbole.\n" +
                                                        "- Zeitmessung: NEIN.\n" +
                                            "- Punkte speichern: NEIN.\n\n" +
                                            "Ziel: Alle 16 Paare finden.";
@@ -83,9 +83,9 @@ namespace Memory_Game
                     this.lblDetails.Text = "ScalableCardsGame ist ein fortgeschrittener, zeitgesteuerter Modus.\n\n" +
                                            "Regeln:\n" +
                                            "- Kartenanzahl: Wählbar (40, 48, 56 oder 64).\n" +
-                                           "- Kartentyp: Bilder (aus dem Ordner 'Images').\n" +
+                                           "- Kartentyp: Bilder .\n" +
                                            "- Zeitmessung: JA (Stoppuhr).\n" +
-                                           "- Punkte speichern: JA (Task G).\n\n" +
+                                           "- Punkte speichern: JA .\n\n" +
                                            "Ziel: Alle Paare so schnell wie möglich finden.";
                     break;
 
